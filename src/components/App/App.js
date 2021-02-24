@@ -12,7 +12,8 @@ import './App.css';
 
 const App = () => (
     <>
-        <Switch>
+    <div className="page">
+    <Switch>
             <Route exact path="/">
                 <Main />
             </Route>
@@ -36,7 +37,8 @@ const App = () => (
             </Route>
         </Switch>
         <Footer />
-    </>
+        </div>
+      </>        
 );
 
 export default App;

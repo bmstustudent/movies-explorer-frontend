@@ -24,3 +24,19 @@
 .promo__nav-tab {
   margin-bottom: 25px;
 }
+
+.nav-tab {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, .6);
+  border-radius: 3px;
+  width: 129px;
+  height: 36px;
+  font-size: 12px;
+  line-height: 16px;
+  background: transparent;
+  margin-left: 20px;
+}
+
+.nav-tab:hover {
+  cursor: pointer;
+}

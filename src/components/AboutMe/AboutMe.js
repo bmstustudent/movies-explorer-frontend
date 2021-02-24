@@ -4,7 +4,7 @@ import './AboutMe.css';
 import photo from '../../images/my-photo.jpg';
 
 const AboutMe = ({ children }) => (
-    <Section sectionClass="about-me" sectionTitleClass="about-me__title" sectionTitle="Студент">
+    <Section sectionClass="about-me" sectionTitleClass="about-me__title" sectionTitle="Студент" id="student">
         <div className="about-me__two-columns">
             <div className="about-me__left-column">
                 <h3 className="about-me__name">Виталий</h3>
