@@ -57,8 +57,41 @@ function App() {
 
       </Switch>
 
+<<<<<<< HEAD
     </div>
   );
 }
+=======
+const App = () => (
+    <>
+    <div className="page">
+    <Switch>
+            <Route exact path="/">
+                <Main />
+            </Route>
+            <Route path="/signup">
+                {/* <Register /> */}
+            </Route>
+            <Route path="/signin">
+                {/* <Login /> */}
+            </Route>
+            <Route path="/movies">
+                {/* <Movies /> */}
+            </Route>
+            <Route path="/saved-movies">
+                {/* <SavedMovies /> */}
+            </Route>
+            <Route path="/profile">
+                {/* <Profile /> */}
+            </Route>
+            <Route path='*'>
+                <NotFound />
+            </Route>
+        </Switch>
+        <Footer />
+        </div>
+      </>        
+);
+>>>>>>> dc65b27324e6300cc003d9c66a5137e27746b3cd
 
 export default App;

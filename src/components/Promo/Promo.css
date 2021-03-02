@@ -1,0 +1,42 @@
+.promo {
+  padding: 75px 70px 50px;
+  background: #F5F5F5;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.promo__title {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  max-width: 640px;
+  margin: 0 0 36px;
+}
+
+.promo__text {
+  max-width: 310px;
+  font-size: 13px;
+  line-height: 16px;
+  opacity: .5;
+  margin: 0 0 146px;
+}
+
+.promo__nav-tab {
+  margin-bottom: 25px;
+}
+
+.nav-tab {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, .6);
+  border-radius: 3px;
+  width: 129px;
+  height: 36px;
+  font-size: 12px;
+  line-height: 16px;
+  background: transparent;
+  margin-left: 20px;
+}
+
+.nav-tab:hover {
+  cursor: pointer;
+}
