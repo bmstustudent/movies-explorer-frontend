@@ -1,24 +1,23 @@
 import React from 'react';
-import './Footer.css';
+import './Footer.css'
 
-const Footer = () => (
-  <footer className="footer">
-    <p className="footer__text">Учебный проект Яндекс.Практикум х BeatFilm.</p>
-    <div className="footer__container">
-      <p className="footer__copyright">&copy; 2021</p>
-      <ul className="footer__list">
-        <li className="footer__list-item">
-          <a href="https://praktikum.yandex.ru/" className="footer__link">Яндекс.Практикум</a>
-        </li>
-        <li className="footer__list-item">
-          <a href="https://github.com/bmstustudent" className="footer__link">Github</a>
-        </li>
-        <li className="footer__list-item">
-          <a href="https://www.facebook.com/" className="footer__link">Facebook</a>
-        </li>
-      </ul>
-    </div>
-  </footer>
-);
+// презентационный компонент, который отрисовывает подвал
+function Footer () {
+  return (
+    <footer className='footer'>
+      <div className='footer__info'>
+        <h2 className='footer__title'>Учебный проект Яндекс.Практикум х BeatFilm.</h2>
+        <div className='footer__container'>
+        <h3 className='footer__author'>&copy;2021</h3>
+          <nav className='footer__links'>
+            <a className='footer__link' href='https://praktikum.yandex.ru/' target='/black'>Яндекс.Практикум</a>
+            <a className='footer__link' href='https://github.com/bmstustudent/' target='/black'>Github</a>
+            <a className='footer__link' href='https://www.facebook.com/' target='/black'>Facebook</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  )
+}
 
 export default Footer;

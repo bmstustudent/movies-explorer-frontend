@@ -1,0 +1,10 @@
+.saved-movies {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+}

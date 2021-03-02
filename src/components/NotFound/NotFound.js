@@ -1,17 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Header from '../Header/Header';
+import { useHistory } from 'react-router-dom';
 import './NotFound.css';
 
-const NotFound = () => (
-    <>
-        <Header className="not-found__header" />
-        <section className="not-found">
-            <h1 className="not-found__title">404</h1>
-            <p className="not-found__subtitle">Страница не найдена</p>
-            <Link to="/" className="not-found__back-link">Назад</Link>
-        </section>
-    </>
-);
+// компонент страницы «Страница не найдена». Он будет содержать 404 ошибку при попытке перейти на несуществующую страницу
+function NotFound () {
+  const history = useHistory();
+
+  return (
+    <section className='not-found'>
+      <h1 className='not-found__error'>404</h1>
+      <h2 className='not-found__text'>Страница не найдена</h2>
+      <button className='not-found__submit' type='submit' onClick={() => history.goBack()}>Назад</button>
+    </section>
+  )
+}
 
 export default NotFound;

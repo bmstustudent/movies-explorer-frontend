@@ -1,56 +1,119 @@
 .footer {
-  height: 172px;
-  width: 100%;
-  max-width: 1440px;
-  padding: 79px 70px 0;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: #FAFAFA;
+  background-color: #fafafa;
+  margin: 0 auto;
+  max-width: 1280px;
 }
 
-.footer__text {
+.footer__info {
+  padding: 0 70px 0 70px;
+}
+
+.footer__title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
   font-size: 13px;
   line-height: 16px;
   color: #a0a0a0;
-  margin: 0 0 20px;
+  margin: 0;
+  padding: 79px 0 20px 0;
+  border-bottom: 1px solid #e8e8e8;
+  width: 100%;
+  text-align: center;
 }
 
 .footer__container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  border-top: 1px solid #E8E8E8;
-  padding: 20px 0;
-  box-sizing: border-box;
 }
 
-.footer__copyright {
-  margin: 0;
+.footer__author {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
   font-size: 13px;
   line-height: 16px;
+  color: #000000;
+  margin: 20px 0;
 }
 
-.footer__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.footer__links {
   display: flex;
-}
-
-.footer__list-item {
-  font-size: 13px;
-  line-height: 16px;
-  margin-right: 20px;
-}
-
-.footer__list-item:last-of-type {
-  margin-right: 0;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .footer__link {
-  text-decoration: none;
-  color: #000;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000000;
+  margin: 20px 17px 20px 0;
+}
+
+.footer__link:nth-of-type(3) {
+  margin-right: 0;
+}
+
+.footer__link:visited {
+  color: #A0A0A0;
+}
+
+.footer__link:hover {
+  transition: 0.1s linear 0.05s;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .footer__title {
+    font-size: 12px;
+    margin: 0 auto 40px auto;
+    padding: 79px 0 20px 0;
+  }
+
+  .footer__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, max-content);
+    grid-template-areas:
+      "links"
+      "autor";
+  }
+
+  .footer__author {
+    grid-area: autor;
+    font-size: 12px;
+    color: #8b8b8b;
+    margin: 30px auto 10px auto;
+  }
+
+  .footer__links {
+    grid-area: links;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    margin: 0 auto;
+  }
+
+  .footer__link {
+    display: grid;
+    font-size: 12px;
+    margin: 12px auto 0 auto;
+  }
+
+  .footer__link:nth-of-type(3) {
+    margin: 12px auto 0 auto;
+  }
 }

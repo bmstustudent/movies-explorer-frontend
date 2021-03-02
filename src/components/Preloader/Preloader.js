@@ -1,6 +1,7 @@
 import React from 'react'
 import './Preloader.css'
 
+// компонент отвечает за работу прелоудера
 const Preloader = () => {
     return (
         <div className="preloader">
