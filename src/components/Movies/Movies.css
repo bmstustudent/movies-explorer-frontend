@@ -1,10 +1,24 @@
 .movies {
-  display: grid;
-  justify-content: center;
-  align-items: center;
+  max-width: 1280px;
   width: 100%;
-  max-width: 2560px;
   height: auto;
   background-color: #FFFFFF;
   margin: 0 auto;
+  border: solid 1px red;
+  padding: 70px 70px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .movies {
+    padding: 70px 50px 80px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movies {
+    padding: 70px 30px 80px;
+  }
 }
