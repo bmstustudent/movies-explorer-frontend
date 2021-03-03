@@ -2,10 +2,10 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './MoviesCard.css';
 
-import poster from '../../../images/33_word.jpg'
+import poster from '../../../images/photo.jpg'
 
 // компонент одной карточки фильма
-function MoviesCard () {
+function MoviesCard() {
   return (
     <div className='movies-card'>
       <img className='movies-card__image' src={poster} alt='Постер фильма'></img>
@@ -22,8 +22,8 @@ function MoviesCard () {
           </Route>
 
         </Switch>
+        <p className='movies-card__duration'>1ч 47м</p>
       </div>
-      <p className='movies-card__duration'>1ч 47м</p>
     </div>
   )
 }

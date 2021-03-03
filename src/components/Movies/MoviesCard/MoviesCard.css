@@ -1,8 +1,6 @@
 .movies-card {
   display: flex;
   flex-direction: column-reverse;
-  justify-content: center;
-  align-items: center;
   max-width: 364px;
   width: 100%;
   background: #fdfdfd;
@@ -23,12 +21,9 @@
 }
 
 .movies-card__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
-  margin: 10px auto 25px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .movies-card__container_title {
@@ -37,28 +32,41 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
-  color: #fff;
-  background-color: #202020;
+  color: #000000;
+  width: 280px;
+  background-color: #FDFDFD;
+  margin: 0;
+  margin-top: 14px;
+  margin-bottom: 9px;
+  margin-left: 14px;
 }
 
 .movies-card__container_remove {
   width: 30px;
   height: 30px;
   border: none;
-  background-color: transparent;
-  margin-right: 14px;
-  margin-top: 19px;
+  background-color: #F9F9F9;
+  border-radius: 36px;
+  background-position: center;
   background-image: url("../../../images/remove-icon.svg");
   background-repeat: no-repeat;
+  cursor: pointer;
+  margin-left: 26px;
+  margin-top: 19px;
 }
 
 .movies-card__container_like {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   border: none;
-  background-color: transparent;
-  background-image: url("../../../images/LikeIconDisabled.svg");
+  background-color: #F9F9F9;
+  border-radius: 36px;
+  background-position: center;
+  background-image: url("../../../images/favoritesIcon.svg");
   background-repeat: no-repeat;
+  cursor: pointer;
+  margin-left: 26px;
+  margin-top: 19px;
 }
 
 .movies-card__container_remove:hover {
@@ -75,7 +83,7 @@
   line-height: 13px;
   color: #8b8b8b;
   width: 100%;
-  align-self: start;
-  padding-top: 6px;
   margin: 0;
+  margin-bottom: 14px;
+  margin-left: 14px;
 }

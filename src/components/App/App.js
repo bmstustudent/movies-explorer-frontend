@@ -19,79 +19,45 @@ function App() {
       <Switch>
 
         <Route exact path='/'>
-          <Header/>
-          <Main/>
-          <Footer/>
+          <Header />
+          <Main />
+          <Footer />
         </Route>
 
         <Route path='/signup'>
-          <Header/>
-          <Register/>
+          <Header />
+          <Register />
         </Route>
 
         <Route path='/signin'>
-          <Header/>
-          <Login/>
+          <Header />
+          <Login />
         </Route>
 
         <Route path='/movies'>
-          <Header/>
-          <Movies/>
-          <Footer/>
+          <Header />
+          <Movies />
+          <Footer />
         </Route>
 
         <Route path='/saved-movies'>
-          <Header/>
-          <SavedMovies/>
-          <Footer/>
+          <Header />
+          <SavedMovies />
+          <Footer />
         </Route>
 
         <Route path='/profile'>
-          <Header/>
-          <Profile/>
+          <Header />
+          <Profile />
         </Route>
 
         <Route path='/*'>
-          <NotFound/>
+          <NotFound />
         </Route>
 
       </Switch>
-
-<<<<<<< HEAD
     </div>
   );
 }
-=======
-const App = () => (
-    <>
-    <div className="page">
-    <Switch>
-            <Route exact path="/">
-                <Main />
-            </Route>
-            <Route path="/signup">
-                {/* <Register /> */}
-            </Route>
-            <Route path="/signin">
-                {/* <Login /> */}
-            </Route>
-            <Route path="/movies">
-                {/* <Movies /> */}
-            </Route>
-            <Route path="/saved-movies">
-                {/* <SavedMovies /> */}
-            </Route>
-            <Route path="/profile">
-                {/* <Profile /> */}
-            </Route>
-            <Route path='*'>
-                <NotFound />
-            </Route>
-        </Switch>
-        <Footer />
-        </div>
-      </>        
-);
->>>>>>> dc65b27324e6300cc003d9c66a5137e27746b3cd
 
 export default App;

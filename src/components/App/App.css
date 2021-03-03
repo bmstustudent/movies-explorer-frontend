@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import url('../../vendor/normalize.css');
 @import url('../../vendor/fonts/fonts.css');
 
@@ -12,20 +11,3 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
-=======
-.page {
-    font-family: 'Inter', Arial, sans-serif;
-    background-color: #FFFFFF;
-    color: #1A1B22;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.33;
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
-  }
->>>>>>> dc65b27324e6300cc003d9c66a5137e27746b3cd
