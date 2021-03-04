@@ -12,18 +12,16 @@ function MoviesCard() {
       <div className='movies-card__container'>
         <h2 className='movies-card__container_title'>33 слова о дизайне</h2>
         <Switch>
-
           <Route path='/saved-movies'>
             <button className='movies-card__container_remove'></button>
           </Route>
-
           <Route path='/movies'>
             <button className='movies-card__container_like'></button>
           </Route>
-
         </Switch>
         <p className='movies-card__duration'>1ч 47м</p>
       </div>
+      
     </div>
   )
 }
