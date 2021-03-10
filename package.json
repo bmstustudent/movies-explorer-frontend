@@ -16,6 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "deploy": "scp -r ./build/* movies-api@84.252.130.235:/home/movies-api/movies-explorer-frontend/build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
