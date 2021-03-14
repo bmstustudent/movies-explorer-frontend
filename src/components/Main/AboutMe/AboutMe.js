@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutMe.css';
-import MyPhoto from '../../../images/me.jpg'
+import me from '../../../images/me.jpg'
 
 // компонент с информацией о студенте
 function AboutMe() {
@@ -22,7 +22,7 @@ function AboutMe() {
             <a className='aboutMe__link' href='https://www.facebook.com/shults.msk' target='/blank'>Facebook</a>
           </div>
         </div>
-        <img className='aboutMe__photo' src={MyPhoto} alt='фото профиля'></img>
+        <img className='aboutMe__photo' src={me} alt='фото профиля'></img>
       </div>
     </section>
   );
