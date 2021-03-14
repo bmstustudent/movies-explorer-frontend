@@ -7,6 +7,13 @@
   max-height: 271px;
 }
 
+.movies-card__link {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 .movies-card__image {
   max-height: 203px;
   width: 100%;

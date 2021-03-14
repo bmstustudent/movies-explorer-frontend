@@ -1,16 +1,31 @@
-import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './MoviesCard.css';
-
-import poster from '../../../images/photo.jpg'
+import { useLocation } from 'react-router-dom';
+import * as helpers from '../../../../utils/helpers';
+import { movieDuration } from '../../../../utils/helpers';
 
 // компонент одной карточки фильма
-function MoviesCard() {
+function MoviesCard({ card, onClickCardButton }) {
+  const location = useLocation();
+  const isSavedMoviesList = location.pathname === '/saved-movies';
+
+  function handleClickButton() {
+    onClickCardButton(card);
+  }
   return (
     <div className='movies-card'>
-      <img className='movies-card__image' src={poster} alt='Постер фильма'></img>
+      <a
+        className="movies-card__link"
+        href={helpers.getTrailerHref(card)}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img className='movies-card__image'
+          src={helpers.getCardImage(card)}
+          alt='Постер фильма'></img>
+      </a>
       <div className='movies-card__container'>
-        <h2 className='movies-card__container_title'>33 слова о дизайне</h2>
+        <h2 className='movies-card__container_title'>{card.nameRU}</h2>
         <Switch>
           <Route path='/saved-movies'>
             <button className='movies-card__container_remove'></button>
@@ -19,11 +34,14 @@ function MoviesCard() {
             <button className='movies-card__container_like'></button>
           </Route>
         </Switch>
-        <p className='movies-card__duration'>1ч 47м</p>
+        <p className='movies-card__duration'>{`${card.duration} ${movieDuration(card.duration)}`}</p>
       </div>
-      
+
     </div>
   )
 }
 
 export default MoviesCard;
+
+
+// Доделать кнопки, пока не знаю как
