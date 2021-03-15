@@ -1,25 +1,144 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import Header from '../Header/Header';
+import Submit from '../Submit/Submit';
+import useValidator from '../../hooks/useValidator';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-import './Profile.css';
+function Profile({loggedIn, onLogout, onUpdateUser}) {
+  const [isEditActive, setIsEditActive] = React.useState(false);
+  const [isSubmitButtonActive, setIsSubmitButtonActive] = React.useState(false);
+  const { values, errors, isValid, handleChange } = useValidator();
+  const currentUser = React.useContext(CurrentUserContext);
 
-// компонент страницы изменения профиля
-function Profile () {
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    onUpdateUser({
+        name: values.name,
+        email: values.email,
+      });
+    setIsEditActive(false);
+  }
+
+  function editProfile() {
+    setIsEditActive(true);
+  }
+
+  function checkNameInput(evt) {
+    handleChange(evt);
+    if (evt.target.value !== currentUser.name) {
+      setIsSubmitButtonActive(true);
+    } else {
+      setIsSubmitButtonActive(false);
+    }
+  }
+
+  function checkEmailInput(evt) {
+    handleChange(evt);
+    if (evt.target.value !== currentUser.email) {
+      setIsSubmitButtonActive(true);
+    } else {
+      setIsSubmitButtonActive(false);
+    }
+  }
+
+  React.useEffect(() => {
+    values.name = currentUser.name;
+    values.email = currentUser.email;
+  }, [currentUser]);
+
   return (
-    <section className='profile'>
-      <h1 className='profile__greeting-title'>Привет, пользователь!</h1>
-      <div className='profile__info'>
-        <p className='profile__info_text' placeholder='Введите имя' pattern="[A-Z0-9a-zА-Яа-яЁё -]{1,}">Имя</p>
-        <p className='profile__info_user'>Name</p>
-      </div>
-        <div className='profile__info_line'></div>
-      <div className='profile__info'>
-        <p className='profile__info_text' placeholder='Введите почту' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">Почта</p>
-        <p className='profile__info_user'>check</p>
-      </div>
-        <button className='profile__edit-btn'>Редактировать</button>
-        <NavLink to='/' className='profile__signout-btn'>Выйти из аккаунта</NavLink>
-    </section>
+    <>
+      <Header loggedIn={loggedIn}/>
+      <main className='profile'>
+        <h1 className='profile__title'>Привет, {currentUser.name}!</h1>
+        <form className='profile__container' id='profile' onSubmit={handleSubmit} noValidate>
+          <div className={`profile__info ${isEditActive && 'profile__info_active'}`}>
+            <label
+              className='profile__key'
+              htmlFor='user__name'
+            >
+              Имя
+            </label>
+            {isEditActive
+              ? <input
+                  className={`profile__value ${isEditActive && 'profile__value_active'}`}
+                  type='text'
+                  id='user__name'
+                  name='name'
+                  disabled={!isEditActive && true}
+                  minLength='2'
+                  maxLength='40'
+                  onChange={checkNameInput}
+                  value={values.name || ''}
+                  required
+                />
+              : <p className='profile__placeholder'>{currentUser.name}</p>
+            }
+
+          </div>
+          <span
+            className='profile__error'
+            id='user__name-error'>
+              {errors.name || ''}
+          </span>
+          <div className='profile__info'>
+            <label
+              className='profile__key'
+              htmlFor='user__email'
+            >
+              Email
+            </label>
+            {isEditActive
+              ? <input
+                  className={`profile__value ${isEditActive && 'profile__value_active'}`}
+                  type='email'
+                  id='user__email'
+                  name='email'
+                  disabled={!isEditActive && true}
+                  onChange={checkEmailInput}
+                  value={values.email || ''}
+                  required
+                />
+              : <p className='profile__placeholder'>{currentUser.email}</p>
+            }
+
+          </div>
+          <span
+            className='profile__error'
+            id='user__email-error'>
+              {errors.email || ''}
+          </span>
+        </form>
+        {isEditActive
+          ? <Submit
+              buttonText='Сохранить'
+              formId='profile'
+              isValid={isValid}
+              isActive={isSubmitButtonActive}
+            />
+          : <ul className='profile__menu'>
+            <li className='profile__menu-item'>
+              <button
+                className='profile__button'
+                type='button'
+                onClick={editProfile}
+              >
+                Редактировать
+              </button>
+            </li>
+            <li className='profile__menu-item'>
+              <button
+                className='profile__button profile__button_logout'
+                type='button'
+                onClick={onLogout}
+              >
+                Выйти из аккаунта
+              </button>
+            </li>
+          </ul>
+        }
+      </main>
+    </>
   )
 }
 

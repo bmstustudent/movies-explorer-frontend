@@ -1,10 +1,9 @@
 import React from 'react'
 import './Preloader.css'
 
-// компонент отвечает за работу прелоудера
-const Preloader = () => {
+const Preloader = ({ isVisiblePreloader }) => {
     return (
-        <div className="preloader">
+        <div className={`preloader ${isVisiblePreloader ? 'preloader_visible' : ''}`}>
             <div className="preloader__container">
                 <span className="preloader__round"></span>
             </div>

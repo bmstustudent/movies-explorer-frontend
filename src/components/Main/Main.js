@@ -1,22 +1,29 @@
 import React from 'react';
-import './Main.css';
 
-import Promo from './Promo/Promo';
-import AboutProject from './AboutProject/AboutProject';
-import Techs from './Techs/Techs';
-import AboutMe from './AboutMe/AboutMe';
-import Portfolio from './Portfolio/Portfolio';
+import AboutMe from '../AboutMe/AboutMe';
+import AboutProject from '../AboutProject/AboutProject';
+import Portfolio from '../Portfolio/Portfolio';
+import Promo from '../Promo/Promo';
+import Techs from '../Techs/Techs'
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
-// компонент страницы «О проекте». Он будет содержать только презентационные компоненты
-function Main() {
+function Main({loggedIn, windowWidth}) {
   return (
-    <main className='main'>
-      <Promo />
-      <AboutProject />
-      <Techs />
-      <AboutMe />
-      <Portfolio />
-    </main>
+    <>
+      <Header
+        loggedIn={loggedIn}
+        windowWidth={windowWidth}
+      />
+      <main className='main'>
+        <Promo />
+        <AboutProject />
+        <Techs />
+        <AboutMe />
+        <Portfolio />
+      </main>
+      <Footer />
+    </>
   )
 }
 

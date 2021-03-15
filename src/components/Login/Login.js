@@ -1,20 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Login.css';
+import WelcomeScreen from '../WelcomeScreen/WelcomeScreen';
+import Form from '../Form/Form';
 
-// компонент страницы авторизации
-function Login () {
+function Login({onLogin, isLoading}) {
   return (
-    <section className='login'>
-      <form className='login__form'>
-        <label className='login__form_label' htmlFor='email'>E-mail</label>
-        <input className='login__form_input' id='email' type='email' placeholder='Введите почту' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></input>
-        <label className='login__form_label' htmlFor='password'>Пароль</label>
-        <input className='login__form_input' id='password' type='password' placeholder='Введите пароль'></input>
-        <button className='login__form_submit' type='submit'>Войти</button>
-        <h2 className='login__form_text'>Еще не зарегистрированы?<Link to="/signup" className="login__form_register">Регистрация</Link></h2>
-      </form>
-    </section>
+    <main className='login'>
+      <WelcomeScreen title='Рады видеть!' />
+      <Form
+        buttonText={isLoading ? 'Вход...' : 'Войти'}
+        descriptionMessage='Ещё не зарегистрированы?'
+        formId='login'
+        linkMessage='Регистрация'
+        onLogin={onLogin}
+      />
+    </main>
   )
 }
 

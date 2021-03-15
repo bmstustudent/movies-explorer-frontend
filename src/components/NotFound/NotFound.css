@@ -36,7 +36,7 @@
   margin-bottom: 184px;
 }
 
-.not-found__submit {
+.not-found__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,14 +51,14 @@
   text-decoration: none;
 }
 
-.not-found__submit:hover {
+.not-found__link:hover {
   cursor: pointer;
   transition: 0.1s linear 0.05s;
   opacity: 0.5;
 }
 
-.not-found__submit:active,
-.not-found__submit:focus {
+.not-found__link:active,
+.not-found__link:focus {
   outline: none;
 }
 
@@ -73,7 +73,7 @@
     margin-bottom: 284px;
   }
 
-  .not-found__submit {
+  .not-found__link {
     font-size: 12px;
   }
 }

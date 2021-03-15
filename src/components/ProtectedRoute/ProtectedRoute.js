@@ -1,18 +1,12 @@
-import { useContext } from 'react';
+import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import CurrentUserContext from '../../../contexts/CurrentUserContext';
 
-const ProtectedRoute = ({ component: Component, ...props }) => {
-  const currentUser = useContext(CurrentUserContext);
-  const loggedIn = !!currentUser.email;
-
+function ProtectedRoute({ component: Component, ...props }) {
   return (
-    <Route path={props.path}>
-      {
-        () => loggedIn ? <Component {...props} /> : <Redirect to="./" />
-      }
+    <Route>
+      { props.loggedIn ? <Component { ...props } /> : <Redirect to='/' />}
     </Route>
-  );
+  )
 }
 
 export default ProtectedRoute;
