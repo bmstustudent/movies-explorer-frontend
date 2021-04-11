@@ -1,4 +1,5 @@
-## [Сслыка на проект](https://bmstustudent.students.nomoredomains.work/)
+## [Сслыка на проект-1](https://bmstustudent.students.nomoredomains.work/)
+## [Сслыка на проект-2](http://shulz.beget.tech/)
 # Публичный IP : 84.252.130.235
 ## [ipi поддомен](https://api.bmstustudent.students.nomoredomains.work/)
 
